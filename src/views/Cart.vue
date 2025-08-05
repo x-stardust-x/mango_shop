@@ -66,7 +66,7 @@
 <script lang="ts">
 import { defineComponent, computed, ref } from "vue";
 import { useStore } from "vuex";
-import axios from "axios";
+import axios from '@/api/axios';
 
 export default defineComponent({
     setup() {
@@ -95,16 +95,14 @@ export default defineComponent({
         const checkout = async () => {
             try {
                 const orderData = {
-                    customer: {
-                        name: name.value,
-                        phone: phone.value,
-                        address: address.value,
-                    },
+                    name: name.value,
+                    phone: phone.value,
+                    address: address.value,
                     items: cartItems.value,
                     total: cartTotal.value,
                 };
                 const res = await axios.post(
-                    "https://mango-api-41pe.onrender.com/api/checkout",
+                    '/checkout',
                     orderData
                 );
                 alert(res.data.message || "結帳成功");
