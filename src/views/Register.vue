@@ -1,7 +1,5 @@
-<!-- 之後改道Login -->
-
 <template>
-    <div class="container my-5">
+    <div class="container mx-auto my-2">
         <h2 class="mb-4">加入會員</h2>
         <form @submit.prevent="register">
             <div class="mb-3">
@@ -18,7 +16,7 @@
             </div> -->
             <div>
                 <button type="submit" class="btn btn-primary">註冊</button>
-                <router-link class="btn btn-warning ms-2" to="/login">返回</router-link>
+                <router-link class="btn btn-warning ms-2" to="/admin/login">返回</router-link>
             </div>
         </form>
     </div>
@@ -37,13 +35,13 @@ const router = useRouter()
 
 const register = async () => {
     try {
-        const res = await axios.post('/register', {
+        const res = await axios.post('admin/register', {
             username: username.value,
             password: password.value,
             admin: false, //先取消
         })
         alert(res.data.message)
-        router.push('/login')
+        router.push('/admin/login')
         
     } catch (error) {
         alert('註冊失敗！')

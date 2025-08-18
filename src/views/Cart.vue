@@ -1,5 +1,5 @@
 <template>
-    <div class="container m-auto">
+    <div class="container mx-auto my-2">
         <h2 class="mb-4 text-center">購物車</h2>
 
         <h4 v-if="cartItems.length === 0" class="alert alert-info">
@@ -102,7 +102,7 @@ export default defineComponent({
                     total: cartTotal.value,
                 };
                 const res = await axios.post(
-                    '/checkout',
+                    'admin/checkout',
                     orderData
                 );
                 alert(res.data.message || "結帳成功");

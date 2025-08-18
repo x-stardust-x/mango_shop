@@ -1,5 +1,5 @@
 <template>
-    <div class="container m-auto">
+    <div class="container mx-auto my-2">
         <h2 class="mb-4 text-center">選購芒果</h2>
 
         <div class="row">

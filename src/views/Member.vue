@@ -1,5 +1,5 @@
 <template>
-    <div class="container my-2">
+    <div class="container mx-auto my-2">
         <h2 class="my-4">會員資料</h2>
         <h3 v-if="username" class="my-4">名子:{{ username }}</h3>
         <h3 v-else>載入中...</h3>
@@ -7,7 +7,13 @@
             <span v-if="isadmin">管理者</span>
             <span v-else>一般會員</span>
         </div>
-        <button class="btn btn-danger" @click="Logout">登出</button>
+        <router-link to="/admin/orders">
+            <button v-if="isadmin" class="btn btn-info">芒果帳單</button>
+        </router-link>
+        <router-link to="/admin/accounts">
+            <button v-if="isadmin" class="btn btn-warning ms-2">帳號管理</button>
+        </router-link>
+        <button class="btn btn-danger ms-2" @click="Logout">登出</button>
     </div>
 </template>
 
@@ -23,7 +29,7 @@ const router = useRouter();
 
 onMounted (async () =>{
     try {
-        const res = await axios.get('/member')
+        const res = await axios.get('admin/member')
         username.value = res.data.username;
         isadmin.value = res.data.admin
         // console.log(res);
@@ -38,6 +44,6 @@ onMounted (async () =>{
 
 const Logout = () => {
     localStorage.removeItem('token')
-    router.push('/login')
+    router.push('admin/login')
 }
 </script>

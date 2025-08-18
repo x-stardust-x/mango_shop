@@ -19,6 +19,12 @@ export default createStore({
       } else {
         state.cart.push({ ...item })
       }
+      const countOrder = [12, 15, 18, 20, 24];
+      state.cart.sort((a, b) => {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return countOrder.indexOf(a.count) - countOrder.indexOf(b.count);
+      });
     },
     REMOVE_ITEM(state, index: number) {
       state.cart.splice(index, 1)

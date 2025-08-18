@@ -1,5 +1,5 @@
 <template>
-    <div class="container m-auto">
+    <div class="container mx-auto my-2">
         <div class="text-center">
             <h2>關於我們</h2>
             <p>我們是專門銷售台灣頂級芒果的農場直送品牌。</p>

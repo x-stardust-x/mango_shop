@@ -1,5 +1,5 @@
 <template>
-    <div class="container my-5">
+    <div class="container mx-auto my-2">
         <h2 class="mb-4">會員登入</h2>
         <form @submit.prevent="Login">
             <div class="mb-3">
@@ -11,7 +11,7 @@
                 <input type="password" class="form-control" v-model="password" required />
             </div>
             <button type="submit" class="btn btn-primary">登入</button>
-            <router-link  class="btn btn-success ms-2" :to="'/Register'">Register</router-link>
+            <router-link  class="btn btn-success ms-2" :to="'/admin/register'">註冊</router-link>
         </form>
     </div>
 </template>
@@ -28,7 +28,7 @@ const router = useRouter();
 
 const Login = async () => {
     try{
-        await axios.post('/login', {
+        await axios.post('admin/login', {
             username : username.value,
             password : password.value,
         })

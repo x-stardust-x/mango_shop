@@ -7,6 +7,8 @@ import Cart from '../views/Cart.vue'
 import Member from '../views/Member.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import Orders from '@/views/Orders.vue'
+import Accounts from '@/views/Accounts.vue'
 
 //之後新增admin介面/admin/
 
@@ -16,8 +18,10 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/products', name: 'Products', component: Products },
   { path: '/cart', name: 'Cart', component: Cart },
   { path: '/member', name: 'Member', component: Member ,meta: {requiresAuth: true}},
-  { path: '/login', name: 'Login', component: Login},
-  { path: '/register', name: 'Register', component: Register}
+  { path: '/admin/login', name: 'Login', component: Login},
+  { path: '/admin/register', name: 'Register', component: Register},
+  { path: "/admin/orders", name:'Orders', component: Orders },
+  { path: "/admin/accounts", name:'Accounts', component: Accounts },
 ]
 
 const router = createRouter({
@@ -29,7 +33,7 @@ router.beforeEach((to, from, next) => {
   const isLoggedIn = !!localStorage.getItem('token') // 有 token 就視為登入
 
   if (to.meta.requiresAuth && !isLoggedIn) {
-    next('/login') // 未登入，導向 login
+    next('admin/login') // 未登入，導向 login
   } else {
     next() // 放行
   }
