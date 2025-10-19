@@ -10,7 +10,7 @@
                 <div class="card mb-3 h-100">
                     <img :src="item.img" class="card-img-top object-fit-cover" :alt="item.name" style="height: 300px;">
                     <div class="card-body">
-                        <h5 class="card-title">{{ item.name }}<i class="bi bi-question-circle px-1"></i></h5>
+                        <h5 class="card-title">{{ item.name }}<i class="bi bi-question-circle px-1"></i><span class="fs-6">圖片純屬參考</span></h5>
                         <p class="card-text">從 {{ item.price }} 元起</p>
                         <router-link to="/products">
                             <button class="btn btn-info w-100">

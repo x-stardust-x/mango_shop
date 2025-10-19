@@ -7,13 +7,13 @@
             <span v-if="isadmin">管理者</span>
             <span v-else>一般會員</span>
         </div>
-        <router-link to="/admin/orders">
-            <button v-if="isadmin" class="btn btn-info">芒果帳單</button>
+        <router-link to="/admin/orders" v-if="isadmin">
+            <button  class="btn btn-info me-2">芒果帳單</button>
         </router-link>
-        <router-link to="/admin/accounts">
-            <button v-if="isadmin" class="btn btn-warning ms-2">帳號管理</button>
+        <router-link to="/admin/accounts" v-if="isadmin" >
+            <button class="btn btn-warning me-2">帳號管理</button>
         </router-link>
-        <button class="btn btn-danger ms-2" @click="Logout">登出</button>
+        <button class="btn btn-danger me-2" @click="Logout">登出</button>
     </div>
 </template>
 

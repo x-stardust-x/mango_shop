@@ -22,8 +22,11 @@
                         <label class="form-label">數量(最多4箱)?</label>
                         <!-- ? 移到上面有tip -->
                         <div class="input-group mb-3">
-                            <input type="number" class="form-control" min="0" max="4"
-                                v-model.number="selectedVariants[i].quantity" />
+                            <input
+                                type="number" class="form-control" min="0" max="4"
+                                v-model.number="selectedVariants[i].quantity"
+                                @input="selectedVariants[i].quantity = Math.min(4, Math.max(0, selectedVariants[i].quantity))"
+                                />
                             <span class="input-group-text">箱</span>
                         </div>
                         <!-- 加入購物車 -->
