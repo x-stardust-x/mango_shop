@@ -1,7 +1,6 @@
 <template>
     <div class="container py-5">
-        <h1 class="mb-4">使用ChatGPT製作文章</h1>
-        <h2 class="mb-4">關於我們</h2>
+        <h1 class="mb-4">關於我們</h1>
         <p>
             在台灣南部的陽光土地上，我們用心栽培每一顆芒果。
             從土壤的養護、花季的細心照料，到果實的成熟採收，

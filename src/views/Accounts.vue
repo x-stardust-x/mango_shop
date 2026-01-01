@@ -1,5 +1,5 @@
 <template>
-    <div class="container mt-5">
+    <div class="container mt-5 mx-auto">
         <h2 class="mb-4">帳號管理</h2>
 
         <!-- 錯誤提示 -->

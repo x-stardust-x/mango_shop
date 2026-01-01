@@ -26,7 +26,7 @@
                         <td>{{ item.quantity }}</td>
                         <td>{{ item.price * item.quantity }} 元</td>
                         <td>
-                            <button class="btn btn-sm btn-danger" @click="removeItem(i)">刪除</button>
+                            <button class="btn btn-sm btn-danger" @click="removeItem(Number(i))">刪除</button>
                         </td>
                     </tr>
                 </tbody>
