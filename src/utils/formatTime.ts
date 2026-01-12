@@ -1,8 +1,5 @@
 export function formatOrderTime(time: string) {
-    const date = new Date(time);
-
-    // 強制補台灣時區 +8
-    date.setHours(date.getHours() + 8);
+    const date = new Date(time); // 正式發布會自動換成使用者當地時區
 
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
